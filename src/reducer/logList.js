@@ -8,7 +8,6 @@ const initialState = {
     userInfo : data
 };
 const logReducer = function(state = initialState,action){
-    console.dir(state);
     let userInfo = state.userInfo;
     switch (action.type){
         case types.USER_LOGIN:
@@ -21,8 +20,9 @@ const logReducer = function(state = initialState,action){
         case types.USER_LOGOUT:
             console.log(action.item,action.type);
             break;
+        default: return state
 
     }
     return state;
-}
+};
 export default logReducer

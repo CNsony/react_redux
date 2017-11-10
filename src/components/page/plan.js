@@ -3,12 +3,16 @@
  */
 import React,{Component}from"react"
 import {connect} from "react-redux";
-import store from "../../redux/store"
+import store from "../../reducer/store"
+import Popup from "./popup"
 //action
 import {show,deletePlan} from "../../action/plan"
 class Plan extends Component{
     constructor (props){
         super(props);
+        this.state={
+            name:"sony"
+        }
     }
     show(){
         let b = this.props.planlist.show;
@@ -20,6 +24,11 @@ class Plan extends Component{
     //jump route
     detail(id){
         this.props.history.push(`/detail/${id}`)
+    }
+    changeName(){
+        this.setState({
+            name : "cai"
+        })
     }
     render(){
         return(
@@ -49,6 +58,8 @@ class Plan extends Component{
 
                     </tbody>
                 </table>
+                <Popup name={this.state.name}/>
+                <button onClick={this.changeName.bind(this)}></button>
             </div>
         )
     }

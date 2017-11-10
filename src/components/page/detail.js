@@ -3,7 +3,7 @@
  */
 import React,{Component} from "react"
 import {connect} from "react-redux";
-import store from "../../redux/store"
+import store from "../../reducer/store"
 class Detail extends Component{
     constructor(props){
         super(props);

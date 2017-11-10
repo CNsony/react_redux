@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import store from '../../redux/store';
+import store from '../../reducer/store';
 import {show, addPlan} from '../../action/plan';
 
 class Pupop extends Component{
@@ -12,6 +12,10 @@ class Pupop extends Component{
             content: '1'
         }
     }
+    componentWillReceiveProps(nextProps) {
+        alert("componentWillReceiveProps");
+        console.log(nextProps.name)
+    }
     // 取消按钮操作
     close () {
         let b = this.props.planlist.show;
@@ -21,7 +25,6 @@ class Pupop extends Component{
             content: ''
         })
         store.dispatch(show(!b));
-        console.log(b)
     }
     // 输入框事件
     handleChage (str, e) {
@@ -47,6 +50,7 @@ class Pupop extends Component{
             <section className="popup" style={this.props.planlist.show ? {} : {display: 'none'}}>
                 <div className="pbox">
                     <span className="close" onClick={this.close.bind(this)}>X</span>
+                    <div>welcome,{this.props.name}</div>
                     <div>
                         <h4>计划标题</h4>
                         <input onChange={this.handleChage.bind(this, 'title')} value={this.state.title} placeholder="请输入计划标题"/>
@@ -70,5 +74,7 @@ const mapStateToProps = function(store) {
         planlist: store.planlist
     };
 };
+
+
 // 连接 store和组件
 export default connect(mapStateToProps)(Pupop);

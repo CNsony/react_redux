@@ -2,13 +2,13 @@
  * Created by scai051 on 10/22/2017.
  */
 import React,{Component} from "react"
-import {BrowserRouter as Router,Route,Link}from "react-router-dom"
+import {Router,Route,NavLink}from "react-router-dom"
 
 const Topic = ({match})=>(
     <div>
         <h3>{match.params.topicId}</h3>
     </div>
-)
+);
 class TestRouter extends Component{
     constructor(props){
         super(props);
@@ -19,19 +19,19 @@ class TestRouter extends Component{
                 <h2>二级路由</h2>
                 <ul>
                     <li>
-                        <Link to={`${this.props.match.url}/rendering`}>
+                        <NavLink to={`${this.props.match.url}/rendering`}>
                             使用React渲染
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={`${this.props.match.url}/components`}>
+                        <NavLink to={`${this.props.match.url}/components`}>
                             组件
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={`${this.props.match.url}/props-v-state`}>
+                        <NavLink to={`${this.props.match.url}/props-v-state`}>
                             属性 v.状态
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
 
