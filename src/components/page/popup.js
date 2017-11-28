@@ -7,34 +7,37 @@ class Pupop extends Component{
     constructor (props) {
         super(props);
         this.state = {
-            id: '',
-            title: '1',
-            content: '1'
+            id: "",
+            title: '',
+            content: '',
+            userId:this.props.loglist.userInfo.id
         }
+
     }
     componentWillReceiveProps(nextProps) {
         alert("componentWillReceiveProps");
-        console.log(nextProps.name)
     }
     // 取消按钮操作
     close () {
         let b = this.props.planlist.show;
         this.setState({
-            id: '',
             title: '',
-            content: ''
-        })
+            content: '',
+            userId:""
+        });
         store.dispatch(show(!b));
     }
     // 输入框事件
     handleChage (str, e) {
         this.setState({
-            id: Math.ceil(Math.random()*10000),
             [str]: e.target.value
         })
     }
     // 确认操作
     conform () {
+        this.setState({
+            id: Math.ceil(Math.random()*10000),
+        });
         store.dispatch(addPlan(this.state));
         this.setState({
             id: '',
@@ -71,7 +74,8 @@ class Pupop extends Component{
 
 const mapStateToProps = function(store) {
     return {
-        planlist: store.planlist
+        planlist: store.planlist,
+        loglist:store.loglist
     };
 };
 

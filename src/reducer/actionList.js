@@ -14,6 +14,7 @@ const planReducer = function(state = initialState, action) {
         // 添加计划
         case types.ADD:
             list.push(action.item);
+            console.log(action,"add action")
             return Object.assign({}, state, { planlist: list });
         // 删除计划
         case types.DELECT:

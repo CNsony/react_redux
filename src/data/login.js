@@ -3,13 +3,15 @@
  */
 const user=[
     {
+        userId:"1",
         Name:"user1",
-        userId:"admin",
         userPassWord:"123456"
+
+
     },
     {
+        userId:"2",
         Name:"user2",
-        userId:"admin2",
         userPassWord:"1234567"
     }
 ]

@@ -6,6 +6,7 @@ import Plan from "./plan"
 import TestRouter from "./router"
 
 import {Router, Route, Link,Switch} from "react-router-dom"
+import Login from "../component/login"
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -28,9 +29,7 @@ class Home extends Component {
                         <div>
                             <Link to='/router'>Route</Link>
                         </div>
-                        <div>
-                            <Link to="/login">Login</Link>
-                        </div>
+                        <Login />
                     </div>
                     <div className="content">
                         <Route path="/plan" component={Plan} />

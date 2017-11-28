@@ -5,6 +5,7 @@ import React,{Component}from"react"
 import {connect} from "react-redux";
 import store from "../../reducer/store"
 import Popup from "./popup"
+import storeWarehouse from "../../reducer/storeWarehouse"
 //action
 import {show,deletePlan} from "../../action/plan"
 class Plan extends Component{
@@ -13,6 +14,7 @@ class Plan extends Component{
         this.state={
             name:"sony"
         }
+
     }
     show(){
         let b = this.props.planlist.show;
@@ -25,17 +27,15 @@ class Plan extends Component{
     detail(id){
         this.props.history.push(`/detail/${id}`)
     }
-    changeName(){
-        this.setState({
-            name : "cai"
-        })
+    edit(id){
+
     }
     render(){
         return(
             <div>
                 <div className="plant">
                     <h3>计划表</h3>
-                    <p onClick={this.show.bind(this)}>添加计划</p>
+                    <p onClick={this.show.bind(this)} style={this.props.loglist.iflog?{}:{display:"none"}}>添加计划</p>
                 </div>
                 <table className="planlist">
                     <thead>
@@ -50,7 +50,11 @@ class Plan extends Component{
                             return(
                                 <tr key={index}>
                                     <td className="plan-title" onClick={this.detail.bind(this,item.id)}>{item.title}</td>
-                                    <td className="plan-delect" onClick={this.delete.bind(this,item.id)}>删除</td>
+                                    <td className="plan-delect">
+                                        <span onClick={this.delete.bind(this,item.id)} style={this.props.loglist.userInfo.id == item.userId?{}:{display:"none"}}>Delete</span>
+                                        <span onClick={this.edit.bind(this,item.id)}>Edit</span>
+                                        <span>Send</span>
+                                    </td>
                                 </tr>
                             )
                         })
@@ -59,15 +63,19 @@ class Plan extends Component{
                     </tbody>
                 </table>
                 <Popup name={this.state.name}/>
-                <button onClick={this.changeName.bind(this)}></button>
+
             </div>
         )
     }
 }
+// const mapStateToProps = storeWarehouse(["planlist","loglist"]);
+
 const mapStateToProps = function(store){
     return{
-        planlist:store.planlist
+        planlist:store.planlist,
+        loglist:store.loglist
     };
-}
+};
+
 //connect store as props
 export default connect(mapStateToProps)(Plan);
