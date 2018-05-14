@@ -3,43 +3,73 @@
  */
 import React, { Component } from 'react'
 import Plan from "./plan"
+import index from "./index"
+import gallery from "./gallery"
+import admin from "./admin"
+import about from "./about"
 import TestRouter from "./router"
 
-import {Router, Route, Link,Switch} from "react-router-dom"
-import Login from "../component/login"
+import { Modal, Button } from 'antd';
+
+import {Router, Route, Link,Switch, Redirect} from "react-router-dom"
+// import Login from "../component/login"
 class Home extends Component {
     constructor(props) {
         super(props);
+        this.state = { visible: false }
+    }
+
+    componentDidMount(){
+        let _this = this;
+        document.querySelector('body').addEventListener("click",function(){
+            _this.setState({
+                visible: false,
+            });
+        })
+    }
+
+    showModal = () => {
+        this.setState({
+            visible: true,
+        });
+    }
+    handleOk = (e) => {
+        this.setState({
+            visible: false,
+        });
     }
     render () {
         return (
             <div>
-                <h2>首页</h2>
-                <p>这是一个 react 学习的基本操作的小栗子</p>
-                <p>通过本次学习可以清楚的掌握， react-router、redux的基本使用方法</p>
                 <div>
-                    <div>
+                    <div className='home_link'>
 
                         <div>
-                            <Link exact="true" to="/">Home</Link>
+                            <Link exact="true" to="/home" activeClassName="active">Home</Link>
                         </div>
                         <div>
-                            <Link to="/plan">Plan</Link>
+                            <Link to="/gallery" activeClassName="active">Gallery</Link>
                         </div>
                         <div>
-                            <Link to='/router'>Route</Link>
+                            <Link to="/admin">Admin</Link>
                         </div>
-                        <Login />
+                        <div onClick={this.showModal}>
+                            <a>About</a>
+                            <div style={this.state.visible?{display:'block'}:{display:'none'}} id='aboutModal'>
+                                <div>There are some about virtual museum.</div>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div className="content">
+                        
+                        <Route path="/home" component={index} />
+                        <Route path="/gallery" component={gallery} />
+                        <Route path="/admin" component={admin} />                      
                         <Route path="/plan" component={Plan} />
-                        <Route path='/router' component={TestRouter} />
-
                     </div>
-                    <p className="App-intro">
-                        To get started, edit <code>src/App.js</code> and save to reload.
-                    </p>
                 </div>
+                
             </div>
         )
     }

@@ -7,3 +7,12 @@ export const SHOW = 'SHOW';
 export const IFLOG = "IFLOG";
 export const USER_LOGIN = "USER_LOGIN";
 export const USER_LOGOUT = "USER_LOGOUT";
+
+
+
+// indexAction
+export const GET_INDEX_IMG = 'GET_INDEX_IMG';
+
+export const SHOW_MODAL = 'SHOW_MODAL'
+
+export const SHOW_ABOUT = 'SHOW_ABOUT'

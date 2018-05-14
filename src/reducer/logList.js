@@ -12,9 +12,9 @@ const logReducer = function(state = initialState,action){
     let userList = data;
     switch (action.type){
         case types.USER_LOGIN:
-            console.log(action.item,action.type,state.iflog);
-            let user = userList.filter((item)=>item.Name==action.item.name&&item.userPassWord==action.item.password);
-            if(user.length!=0){
+            console.log(action.item,action.type,state.iflog);console.log(action.item,action.type,state.iflog);
+            let user = userList.filter((item)=>item.Name===action.item.name&&item.userPassWord===action.item.password);
+            if(user.length!==0){
                 console.log(user)
                 return Object.assign({},state,{iflog:true,userInfo:{user:user[0].Name,id:user[0].userId}})
             }

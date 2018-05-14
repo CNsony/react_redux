@@ -15,7 +15,7 @@ class Pupop extends Component{
 
     }
     componentWillReceiveProps(nextProps) {
-        alert("componentWillReceiveProps");
+        
     }
     // 取消按钮操作
     close () {
@@ -52,7 +52,7 @@ class Pupop extends Component{
         return (
             <section className="popup" style={this.props.planlist.show ? {} : {display: 'none'}}>
                 <div className="pbox">
-                    <span className="close" onClick={this.close.bind(this)}>X</span>
+                    {/* <span className="close" onClick={this.close.bind(this)}>X</span> */}
                     <div>welcome,{this.props.name}</div>
                     <div>
                         <h4>计划标题</h4>

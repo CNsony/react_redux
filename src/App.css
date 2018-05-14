@@ -1,3 +1,22 @@
+
+
+#root{
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: SamsungOne!important;
+}
+#backGroundImg{
+  background-image: url('./components/assets/static/virtual_museum.jpg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
 .App {
   text-align: center;
   position: relative;
@@ -9,14 +28,15 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #50C1E9;
+  height: 100px;
   padding: 20px;
   color: white;
+  opacity: 0.8;
 }
-
 .App-title {
   font-size: 1.5em;
+  margin: 10px!important;
 }
 
 .App-intro {

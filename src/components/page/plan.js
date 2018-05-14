@@ -5,7 +5,6 @@ import React,{Component}from"react"
 import {connect} from "react-redux";
 import store from "../../reducer/store"
 import Popup from "./popup"
-import storeWarehouse from "../../reducer/storeWarehouse"
 //action
 import {show,deletePlan} from "../../action/plan"
 class Plan extends Component{
@@ -35,7 +34,7 @@ class Plan extends Component{
             <div>
                 <div className="plant">
                     <h3>计划表</h3>
-                    <p onClick={this.show.bind(this)} style={this.props.loglist.iflog?{}:{display:"none"}}>添加计划</p>
+                    <p onClick={this.show.bind(this)} style={!this.props.loglist.iflog?{}:{display:"none"}}>添加计划</p>
                 </div>
                 <table className="planlist">
                     <thead>

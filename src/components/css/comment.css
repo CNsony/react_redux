@@ -71,6 +71,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .popup .pbox {
     width: 50%;
@@ -79,6 +80,8 @@
     box-sizing: border-box;
     padding: 10px;
     position: relative;
+    text-align: left;
+    color: #333;
 }
 .popup .pbox h4{
     font-size: 14px;
@@ -167,4 +170,123 @@
 }
 .plan-title{
     width: 80%;
+}
+.App-title{
+    float: right;
+}
+
+.home_link{
+    text-align: right;
+    padding: 20px 0 30px;
+}
+.home_link>div{
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #ababab;
+    color: white;
+    border-radius: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+.home_link>div>a{
+    display: inline-block;
+    width: 110px;
+    padding:10px;
+    text-decoration-line: none;
+    font-size: 18px
+}
+.home_link .active{
+    background-color: blue;
+}
+.App-footer{
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(80, 195, 233, 0.8);
+    color: white;
+    text-align: right
+}
+.App-footer span{
+    padding:5px 15px;
+    font-size: 14px;
+    display: inline-block;
+    cursor: pointer
+}
+.home-img-box{
+    padding:20px;
+    border: 1px solid #dddddd;
+}
+.closeButton{
+    float: right;
+    font-size: 30px!important;
+    padding: 0!important;
+    line-height: 15px;
+}
+.model-download{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    display: inline!important;
+    width: 20px!important;
+    height: 20px!important;
+}
+.modal_download_box{
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #ababab;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.modal_download_button{
+    display: inline-block;
+    padding: 10px 40px;
+    margin-top: 30px;
+    font-size: 18px;
+    border: 1px solid #ababab;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #333;
+    background-color: #a2ddf1;
+    transition: 0.5s all;
+}
+.modal_download_button:hover{
+    background-color: #50C1E9;
+    
+}
+
+/* admin css */
+.admin_top_button{
+    padding: 10px;
+    font-size: 16px;
+    /* border-radius: 7px; */
+    border: 1px solid #ababab;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+.admin_top_button:hover{
+
+}
+
+/* about */
+#aboutModal{
+    position: absolute;
+    right: 0;
+    width: 300px;
+    margin-top: 30px;
+    border: 1px solid #ababab;
+    padding: 10px;
+    background-color: white;
+    color: #333;
+    z-index:1000;;
+    border-radius: 5px;
+}
+#aboutModal::after{
+    content:' ';
+    width:0px;
+    height:0px;
+    position:absolute;
+    left:70%;
+    top:-12px;
+    -webkit-transform:translate(0px,-50%);
+    border:12px solid rgba(0,0,0,0.7);
+    border-color:transparent transparent rgba(0,0,0,0.7) transparent
 }

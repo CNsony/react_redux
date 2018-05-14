@@ -10,15 +10,14 @@ const initialState = {
 
 const planReducer = function(state = initialState, action) {
     let list = state.planlist;
-    switch(action.type) {
+    switch(action.type){
         // 添加计划
         case types.ADD:
             list.push(action.item);
-            console.log(action,"add action")
             return Object.assign({}, state, { planlist: list });
         // 删除计划
         case types.DELECT:
-            let newstate = list.filter((item) => item.id != action.id);
+            let newstate = list.filter((item) => item.id !== action.id);
             return Object.assign({}, state, { planlist: newstate });
         // 显示、隐藏弹出层
         case types.SHOW:

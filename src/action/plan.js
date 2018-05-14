@@ -2,6 +2,7 @@
  * Created by scai051 on 10/24/2017.
  */
 import * as types from './action_type';
+
 //create action and return it
 // 添加计划
 export function addPlan(item) {
@@ -37,3 +38,23 @@ export function logout() {
     }
 }
 
+export function getImg(data) {
+    return{
+        type:types.GET_INDEX_IMG,
+        data
+    }
+}
+
+export function showModal(show,id){
+    return {
+        type:types.SHOW_MODAL,
+        show,
+    }
+}
+
+export function showAbout(show){
+    return {
+        type:types.SHOW_ABOUT,
+        showAbout
+    }
+}

@@ -12,46 +12,46 @@ import Popup from "./popup"
 import Detail from "./detail"
 import TestRouter from "./router"
 
+import Imglist from '../component/imgList'
+import axios from '../../config/http'
+import * as actionMap from '../../action/plan'
+
+import * as request from "../request/request"
+
 class Index extends Component{
     constructor(props){
-        super(props);
+        super(props);      
     }
-    logout(){
-
+    componentDidMount() {
+        request.getImg()
     }
+    
     render(){
-        return(
-            <div>
-                <ul className="nav">
-                    <li>
-                        <Link to={`${this.props.match.url}/2`}>index_2</Link>
-                    </li>
-                    <li>
-                        <Link to={`${this.props.match.url}/3`}>index_3</Link>
-                    </li>
-                    <li>
-                        <div onClick={this.logout()}>logout</div>
-                    </li>
-                </ul>
-                <div className="content">
-                    <Route exact path="/" component={Home}></Route>
-                    <Route path="/plan" component={Plan}></Route>
-                    <Route path="/test" component={TestRouter}></Route>
-                    <Route path="/detail/:id" component={Detail}></Route>
+        if(!this.props.indexAction.show){
+            return(
+            <div className='row'>
+                <div className='col-md-12 home-img-box'>
+                    <div>Loading...</div>
                 </div>
-                <Popup />
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-                <Home />
             </div>
-
+            )
+        }else{
+            return(
+            <div className='row'>
+                <div className='col-md-12 home-img-box'>
+                    <p>East Asia Collection</p>
+                    <Imglist data={this.props.indexAction.imglist}/>
+                </div>
+                
+            </div>
         )
+        }
+        
     }
 }
 const mapStateToProps = function(store){
     return{
-        loglist:store.loglist
+        indexAction:store.indexAction
     }
 }
 export default connect(mapStateToProps)(Index)

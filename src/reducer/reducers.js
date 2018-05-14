@@ -6,11 +6,13 @@ import { combineReducers } from 'redux';
 // Reducers
 import planlist from './actionList';
 import loglist from "./logList"
+import indexAction from './indexAction'
 
 // Combine Reducers
 var reducers = combineReducers({
     planlist: planlist,
-    loglist:loglist
+    loglist:loglist,
+    indexAction:indexAction
 });
 
 export default reducers;
