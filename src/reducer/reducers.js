@@ -7,12 +7,13 @@ import { combineReducers } from 'redux';
 import planlist from './actionList';
 import loglist from "./logList"
 import indexAction from './indexAction'
-
+import galleryAction from './galleryAction'
 // Combine Reducers
 var reducers = combineReducers({
     planlist: planlist,
     loglist:loglist,
-    indexAction:indexAction
+    indexAction:indexAction,
+    galleryAction:galleryAction
 });
 
 export default reducers;

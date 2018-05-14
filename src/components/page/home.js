@@ -61,7 +61,7 @@ class Home extends Component {
                         </div>
                     </div>
                     
-                    <div className="content">
+                    <div className="content" style={{marginLeft:'-15px',marginRight:'-15px'}}>
                         
                         <Route path="/home" component={index} />
                         <Route path="/gallery" component={gallery} />
