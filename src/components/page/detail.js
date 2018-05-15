@@ -1,6 +1,4 @@
-/**
- * Created by scai051 on 10/22/2017.
- */
+
 import React,{Component} from "react"
 import {connect} from "react-redux";
 import store from "../../reducer/store"

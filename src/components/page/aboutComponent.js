@@ -12,7 +12,7 @@ class AboutComponent extends Component{
     componentWillReceiveProps(nextProps) {
         
     }
-    // 取消按钮操作
+    
     close () {
         let b = this.props.indexAction.showAbout;
         if(b){
@@ -47,5 +47,4 @@ const mapStateToProps = function(store) {
 };
 
 
-// 连接 store和组件
 export default connect(mapStateToProps)(AboutComponent);

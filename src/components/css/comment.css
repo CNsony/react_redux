@@ -149,7 +149,7 @@
     padding: 0 10px;
     color: #fff;
 }
-.planlist{
+/* .planlist{
     width: 100%;
     padding: 10px;
     border-collapse: collapse;
@@ -159,7 +159,7 @@
     line-height: 32px;
     font-size: 14px;
 
-}
+} */
 .plan-delect{
     color: red;
     cursor: pointer;
@@ -220,6 +220,7 @@
     font-size: 30px!important;
     padding: 0!important;
     line-height: 15px;
+    cursor: pointer
 }
 .model-download{
     position: absolute;
@@ -261,6 +262,7 @@
     border: 1px solid #ababab;
     transition: 0.5s all;
     cursor: pointer;
+    background-color: white;
 }
 .admin_top_button:hover{
 
@@ -334,4 +336,22 @@
     border: 1px solid #ababab;
     height: 438px;
     margin-top: 14px;
+}
+.submit_button{
+    width: 200px;
+    margin: 0 auto;
+    padding: 15px 15px;
+    font-size: 18px;
+    border: 1px solid #ababab;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center
+}
+.modal_des{
+    display: inline-block;
+}
+
+.table_admin{
+    border: 1px solid #dcdcdc;
+    background-color: white
 }

@@ -62,7 +62,7 @@ class Home extends Component {
                     </div>
                     
                     <div className="content" style={{marginLeft:'-15px',marginRight:'-15px'}}>
-                        
+                        <Redirect exact from="/" to="/home"/>
                         <Route path="/home" component={index} />
                         <Route path="/gallery" component={gallery} />
                         <Route path="/admin" component={admin} />                      

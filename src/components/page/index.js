@@ -1,6 +1,4 @@
-/**
- * Created by scai051 on 10/26/2017.
- */
+
 import React,{Component} from "react"
 import {Router, Route, Link} from "react-router-dom"
 import {connect} from "react-redux"
@@ -39,7 +37,7 @@ class Index extends Component{
             return(
             <div className='row'>
                 <div className='col-md-12 home-img-box'>
-                    <p>East Asia Collection</p>
+                    <p style={{fontSize:'18px'}}>East Asia Collection</p>
                     <Imglist data={this.props.indexAction.imglist}/>
                 </div>
                 

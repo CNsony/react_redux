@@ -1,6 +1,4 @@
-/**
- * Created by scai051 on 10/26/2017.
- */
+
 import React,{Component} from "react"
 import {Router, Route, Link} from "react-router-dom"
 import {connect} from "react-redux"

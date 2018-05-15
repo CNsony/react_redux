@@ -20,8 +20,8 @@ class Imglist extends Component{
                                         <span onClick={this.edit.bind(this,item.id)}>Edit</span>
                                         <span>Send</span>
                                     </td> */}
-                                    <img src={item.src} />
-                                    <div className='img_title'>{item.title}</div>
+                                    <img src={item.img} />
+                                    <div className='img_title'>{item.description}</div>
                                 </div>
                             )
                         })

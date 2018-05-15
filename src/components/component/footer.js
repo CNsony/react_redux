@@ -1,6 +1,4 @@
-/**
- * Created by scai051 on 10/22/2017.
- */
+
 import React,{Component} from "react"
 import store from '../../reducer/store'
 import Modal from "./modal"
@@ -37,5 +35,5 @@ const mapStateToProps = function(store) {
 };
 
 
-// 连接 store和组件
+
 export default connect(mapStateToProps)(Footer);
