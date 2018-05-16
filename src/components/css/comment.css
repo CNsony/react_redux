@@ -355,3 +355,21 @@
     border: 1px solid #dcdcdc;
     background-color: white
 }
+.ant-upload-select{
+    margin-top: 5px;
+}
+.ant-upload-list{
+    display: inline-block
+}
+.img_box{
+    width: 100%;
+    height: 350px
+}
+.gallery_modal_button.active{
+    background: #50C1E9
+}
+@media (min-width: 1200px){
+    .container {
+    width: 1680px!important;
+}
+}

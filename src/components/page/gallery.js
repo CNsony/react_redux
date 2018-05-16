@@ -21,6 +21,9 @@ class Index extends Component{
             
         }
     }
+    componentDidMount(){
+        document.querySelector(".gallery_modal_button").classList.add("active")
+    }
 
     selectMedia=(e)=>{
         this.setState({
@@ -28,9 +31,29 @@ class Index extends Component{
         })
     }
     selectModal=(e)=>{
+        document.querySelectorAll(".gallery_modal_button").forEach(function(item,index){
+            item.classList.remove("active")
+        })
+        document.querySelectorAll(".gallery_modal_button")[e.target.attributes.index.value].classList.add("active")
         this.setState({
             modalIndex:e.target.attributes.index.value
         })
+    }
+
+    view1=()=>{
+        console.log(1)
+    }
+    view2=()=>{
+        console.log(2)
+    }
+    spin=()=>{
+        console.log(3)
+    }
+    light=()=>{
+        console.log(4)
+    }
+    wireframe=()=>{
+        console.log(5)
     }
     render(){
         
@@ -41,11 +64,11 @@ class Index extends Component{
                         <div>
                             <h2>Controls</h2>
                             <div className=''>
-                                <div className='gallery_view_button'>View1</div>
-                                <div className='gallery_view_button'>View2</div>
-                                <div className='gallery_view_button'>Spin</div>
-                                <div className='gallery_view_button'>Light</div>
-                                <div className='gallery_view_button'>Wireframe</div>
+                                <div className='gallery_view_button' onClick={this.view1}>View1</div>
+                                <div className='gallery_view_button' onClick={this.view2}>View2</div>
+                                <div className='gallery_view_button' onClick={this.spin}>Spin</div>
+                                <div className='gallery_view_button' onClick={this.light}>Light</div>
+                                <div className='gallery_view_button' onClick={this.wireframe}>Wireframe</div>
                             </div>
                         </div>
                     </div>
@@ -63,21 +86,28 @@ class Index extends Component{
                         </div>
                         <div className='row' id='media_box'>
                             <div className='pic_box col-md-12' style={this.state.mediaIndex==="1"?{}:{display:'none'}}>
-                            {this.state.data[this.state.modalIndex].img}
+                            <img src={this.state.data[this.state.modalIndex].img} />
+                            
                             </div>
                             <div className='video_box col-md-12' style={this.state.mediaIndex==="2"?{}:{display:'none'}}>
-                            {this.state.data[this.state.modalIndex].video}
+                            <video width="360" height="410" controls>
+                                <source src={this.state.data[this.state.modalIndex].video} type="video/mp4" />
+                            </video>
                             </div>
                             <div className='modal_box col-md-12' style={this.state.mediaIndex==="3"?{}:{display:'none'}}>
-                            {this.state.data[this.state.modalIndex].x3d}
+                            <x3d width='360px' height='410px'>
+                            <scene>
+                            <inline nameSpaceName="Model" mapDEFToID="true" url={this.state.data[this.state.modalIndex].x3d}> </inline>
+                            </scene>
+                            </x3d>
                             </div>                            
                         </div>
                     </div>
                     <div className='col-md-3' style={{paddingTop:'13px'}}>
-                            <div className='' style={{border:'1px solid #ababab'}} onClick={this.selectModal}>
+                            <div className='' style={{border:'1px solid #ababab',maxHeight:'500px',overflow:"auto"}} onClick={this.selectModal}>
                                 {
                                     this.props.indexAction.imglist.map((item,index)=>{
-                                        return (<div className='gallery_modal_button' index={index} style={this.state.modalIndex==="0"?{background:'#50C1E9'}:{}}>Modal{index+1}</div>)
+                                        return (<div className='gallery_modal_button' index={index}>Modal{index+1}</div>)
                                     })
                                 }
 
@@ -89,8 +119,7 @@ class Index extends Component{
                     </div>
                 </div>
                 <div className='col-md-4'>
-                    <div className=''>
-                        {this.state.data[this.state.modalIndex].description}
+                    <div className='' dangerouslySetInnerHTML={{__html:this.state.data[this.state.modalIndex].description}}>
                     </div>
                 </div>
             </div>

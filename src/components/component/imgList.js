@@ -9,19 +9,13 @@ class Imglist extends Component{
     }
     render(){
         return(
-            <div className='col-md-12'>
+            <div className='col-md-12' style={{overflow:"auto"}}>
                 {
                         this.props.data.map((item,index)=>{
                             return(
-                                <div key={index} className='col-md-3'>
-                                    {/* <td className="plan-title" onClick={this.detail.bind(this,item.id)}>{item.title}</td>
-                                    <td className="plan-delect">
-                                        <span onClick={this.delete.bind(this,item.id)} style={this.props.loglist.userInfo.id == item.userId?{}:{display:"none"}}>Delete</span>
-                                        <span onClick={this.edit.bind(this,item.id)}>Edit</span>
-                                        <span>Send</span>
-                                    </td> */}
-                                    <img src={item.img} />
-                                    <div className='img_title'>{item.description}</div>
+                                <div key={index} className='col-md-3' style={{height:'450px'}}>
+                                    <img src={item.img} className='img_box'/>
+                                    <div className='img_title' dangerouslySetInnerHTML={{__html:item.description}}></div>
                                 </div>
                             )
                         })
