@@ -16,13 +16,16 @@ class Footer extends Component{
             store.dispatch(actionList.showModal({show:!b,id:e.target.id}));
         }
     }
+    download=()=>{
+        window.location.href=''
+    }
     render(){
         return(
             <div className='App-footer container' onClick={this.show.bind(this)}>
                 <span id='1'>References</span>
                 <span id='2'>Site Map</span>
                 <span id='3'>Originality Statement</span>
-                <span id='4'>Download</span>
+                <span onClick={this.download}>Download</span>
                 <Modal />
             </div>
         )
