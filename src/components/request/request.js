@@ -1,4 +1,4 @@
-// import _axios from '../../config/http'
+
 import store from '../../reducer/store'
 import * as actionMap from '../../action/plan'
 import qs from 'qs'
@@ -25,7 +25,7 @@ export function createModal(param){
         }
     }
         $axios.post('http://localhost:80/web_3D_app/index.php/index/index/create', param, config).then((res)=>{
-            console.log(res)
+            getImg()
         }).catch((err)=>{
             console.error(err)
         })

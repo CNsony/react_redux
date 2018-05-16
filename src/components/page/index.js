@@ -4,14 +4,8 @@ import {Router, Route, Link} from "react-router-dom"
 import {connect} from "react-redux"
 import store from "../../reducer/store"
 
-import Plan from "./plan"
-import Home from "./home"
-import Popup from "./popup"
-import Detail from "./detail"
-import TestRouter from "./router"
 
 import Imglist from '../component/imgList'
-import axios from '../../config/http'
 import * as actionMap from '../../action/plan'
 
 import * as request from "../request/request"

@@ -1,7 +1,7 @@
 
 import * as types from '../action/action_type';
 import data from '../data/index_img'
-import axios from '../config/http'
+
 const initialState = {
     show: false, 
     imglist: data, 

@@ -2,16 +2,16 @@
  * Created by scai051 on 10/20/2017.
  */
 import React, { Component } from 'react'
-import Plan from "./plan"
+
 import index from "./index"
 import gallery from "./gallery"
 import admin from "./admin"
-import about from "./about"
-import TestRouter from "./router"
 
-import { Modal, Button } from 'antd';
 
-import {Router, Route, Link,Switch, Redirect} from "react-router-dom"
+
+// import { Modal, Button } from 'antd';
+
+import {Route, Link, Redirect} from "react-router-dom"
 // import Login from "../component/login"
 class Home extends Component {
     constructor(props) {
@@ -45,10 +45,10 @@ class Home extends Component {
                     <div className='home_link'>
 
                         <div>
-                            <Link exact="true" to="/home" activeClassName="active">Home</Link>
+                            <Link exact="true" to="/home">Home</Link>
                         </div>
                         <div>
-                            <Link to="/gallery" activeClassName="active">Gallery</Link>
+                            <Link to="/gallery">Gallery</Link>
                         </div>
                         <div>
                             <Link to="/admin">Admin</Link>
@@ -66,7 +66,7 @@ class Home extends Component {
                         <Route path="/home" component={index} />
                         <Route path="/gallery" component={gallery} />
                         <Route path="/admin" component={admin} />                      
-                        <Route path="/plan" component={Plan} />
+                    
                     </div>
                 </div>
                 

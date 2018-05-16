@@ -1,6 +1,4 @@
-/**
- * Created by scai051 on 11/14/2017.
- */
+
 import store from "./store"
 const WareHouse = function(house) {
     let warehouse = {};

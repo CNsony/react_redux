@@ -187,6 +187,10 @@
     border-radius: 200px;
     text-align: center;
     cursor: pointer;
+    background-color: white;
+}
+.home_link>div:hover{
+    background-color: #50C1E9
 }
 .home_link>div>a{
     display: inline-block;

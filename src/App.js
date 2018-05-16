@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import {Router, Route, Link,Switch,Redirect} from "react-router-dom"
+import {Router, Route,Switch} from "react-router-dom"
 
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './reducer/store'
 // import logo from './logo.svg';
 
-import Index from "./components/page/index"
 import Home from "./components/page/home"
-import Popup from "./components/page/popup"
-import LogCom from "./components/page/logCom"
-import TestRouter from "./components/page/router"
-import Detail from "./components/page/detail"
-import Plan from "./components/page/plan"
+
 import Footer from './components/component/footer'
 
 import 'antd/dist/antd.css';

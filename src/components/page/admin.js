@@ -4,11 +4,10 @@ import {Router, Route, Link} from "react-router-dom"
 import {connect} from "react-redux"
 import store from "../../reducer/store"
 
-import Plan from "./plan"
-import Home from "./home"
-import Popup from "./popup"
-import Detail from "./detail"
-import TestRouter from "./router"
+
+
+
+
 
 import * as request from '../request/request'
 
@@ -246,7 +245,7 @@ class Index extends Component{
                     </div>
                     
                 </div>
-                <div className='row' style={{'margin-top':"30px"}}>
+                <div className='row' style={{'marginTop':"30px"}}>
                    
                     <div className='col-md-12'>
                         <div>
@@ -269,7 +268,7 @@ class Index extends Component{
                                         <Icon type="upload" /> Upload a .jpg file
                                     </Button>
                                 </Upload> */}
-                                <input type='file' onChange={this.changeImg} accept="image/jpeg"  style={{border:'0'}}/>
+                                <input type='file' onChange={this.changeImg} accept="image/jpeg"  style={{border:'0',textIndent:'0'}}/>
                                 </div>
                             </div>
                                 <div className='col-md-12'>
@@ -282,7 +281,7 @@ class Index extends Component{
                                             <Icon type="upload" /> Upload a .avi file
                                         </Button>
                                         </Upload> */}
-                                        <input type='file' onChange={this.changeVideo} accept="audio/mp4, video/mp4"  style={{border:'0'}}/>
+                                        <input type='file' onChange={this.changeVideo} accept="audio/avi, video/avi"  style={{border:'0',textIndent:'0'}}/>
                                     </div>
                             </div>
                             <div className='col-md-12'>
@@ -295,7 +294,7 @@ class Index extends Component{
                                         <Icon type="upload" /> Upload a .x3d file
                                     </Button>
                                     </Upload> */}
-                                    <input type='file' onChange={this.changex3d} accept="*.x3d" style={{border:'0'}}/>
+                                    <input type='file' onChange={this.changex3d} accept="*.x3d" style={{border:'0',textIndent:'0'}}/>
                                 </div>
                             </div>
                                 

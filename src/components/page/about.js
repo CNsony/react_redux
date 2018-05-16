@@ -4,11 +4,8 @@ import {Router, Route, Link} from "react-router-dom"
 import {connect} from "react-redux"
 import store from "../../reducer/store"
 
-import Plan from "./plan"
-import Home from "./home"
-import Popup from "./popup"
-import Detail from "./detail"
-import TestRouter from "./router"
+
+
 
 class Index extends Component{
     constructor(props){
@@ -20,24 +17,7 @@ class Index extends Component{
     render(){
         return(
             <div>
-                {/* <ul className="nav">
-                    <li>
-                        <Link to={`${this.props.match.url}/2`}>index_2</Link>
-                    </li>
-                    <li>
-                        <Link to={`${this.props.match.url}/3`}>index_3</Link>
-                    </li>
-                    <li>
-                        <div onClick={this.logout()}>logout</div>
-                    </li>
-                </ul>
-                <div className="content">
-                    <Route exact path="/" component={Home}></Route>
-                    <Route path="/plan" component={Plan}></Route>
-                    <Route path="/test" component={TestRouter}></Route>
-                    <Route path="/detail/:id" component={Detail}></Route>
-                </div>     */}
-                index4
+                
             </div>
 
         )
@@ -45,7 +25,7 @@ class Index extends Component{
 }
 const mapStateToProps = function(store){
     return{
-        loglist:store.loglist
+        
     }
 }
 export default connect(mapStateToProps)(Index)
